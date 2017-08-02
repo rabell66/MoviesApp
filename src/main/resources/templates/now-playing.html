@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<HTML xmlns:th="http://www.w3.org/1999/xhtml">
+    <meta charset="UTF-8"/>
+    <title>Now Playing</title>
+
+<a href = "./">Home</a>
+<a href ="./medium-popular-long-name">MPLN</a>
+
+
+<body>
+ <h1>Currently playing in Theaters near you</h1>
+
+ <div>
+     <tr th:each="movie : ${movies}">
+         <td><img width="150px" th:src="@{http://image.tmdb.org/t/p/original} + ${movie.posterPath}"/></td>
+     <!--<span ???></span>-->
+         <td><h3>Title:<span th:text="${movie.title}"></span></h3></td>
+     </tr>
+ </div>
+</body>
+
+</HTML>
